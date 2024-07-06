@@ -1,0 +1,31 @@
+version: '3' # docker version
+name: kubernetes-cloud-resume # name of the app
+services:
+  www:
+    build: 
+      context: ./PHP # where the dockerfile is located
+      dockerfile: Dockerfile
+    volumes: 
+      - "./:/var/www/html" # sync project dir with container web dir
+    ports:
+      - 80:80
+      - 443:443 # future SSL traffic
+    env_file:
+      - default.env
+  db: 
+    image: mysql:latest
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - "./SQL:/docker-entrypoint-initdb.d" # this is how we persist a sql db even when container stops
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8001:80
+    environment:
+      - PMA_HOST=db
+      - PMA_PORT=3306
+  
