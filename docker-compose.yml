@@ -1,12 +1,11 @@
-version: '3' # docker version
-name: kubernetes-cloud-resume # name of the app
+version: '3.3' # docker version
 services:
   www:
     build: 
       context: ./PHP # where the dockerfile is located
       dockerfile: Dockerfile
     volumes: 
-      - "./:/var/www/html" # sync project dir with container web dir
+      - "./PHP/:/var/www/html" # sync project dir with container web dir
     ports:
       - 80:80
       - 443:443 # future SSL traffic
@@ -28,4 +27,3 @@ services:
     environment:
       - PMA_HOST=db
       - PMA_PORT=3306
-  
