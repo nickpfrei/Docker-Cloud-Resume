@@ -1,14 +1,11 @@
 # Steps to Build Personal Resume Website Using Docker and AWS/Azure
 
-
-
-
 ## Prerequisite  
 - Install WSL
 - Docker
 - Azure or AWS account
 ## Step 1: Create a github repo
-- I created a repo called kubernetes-cloud-resume where I stored my files 
+- I created a repo called docker-cloud-resume where I stored my files
   - .gitignore file for env and sensitive files
   - PHP folder for PHP files
   - SQL for MySQL files
@@ -126,5 +123,6 @@ docker stop resumewebsite
 6. Add tags and create! 
 ### Finale
 - After you've done all of this, and your CloudFront distribution is created, you will be able to view the EC2 instance using your FQDN. In my case, `resume.nickfrei.com`
+- Feel free to visit if you have time! [Docker/AWS Resume](https://resume.nickfrei.com)
 
 ![Website](./Images/Website.png)
