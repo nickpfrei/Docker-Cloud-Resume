@@ -116,7 +116,7 @@ docker stop resumewebsite
 1. Add the new records to your hosted zone in AWS (route 53)
    1. this assumes you've already registered a domain and created a hosted zone in AWS. If you need help doing that, please follow this documentation: [Route53](https://aws.amazon.com/route53/)
 2. After you've added the records to your hosted zone, the Certificate Manager will show a successful status
-   ![CertificateManager](Images\CertificateManager.png)
+   ![CertificateManager](./Images/CertificateManager.png)
 ### CloudFront
 1. Now, the easiest way to setup SSL on a personal website is to use CloudFront (when using AWS)
 2. Create a new cloudfront distribution
@@ -127,4 +127,4 @@ docker stop resumewebsite
 ### Finale
 - After you've done all of this, and your CloudFront distribution is created, you will be able to view the EC2 instance using your FQDN. In my case, `resume.nickfrei.com`
 
-![Website](Images\Website.png)
+![Website](./Images/Website.png)
