@@ -1,5 +1,9 @@
 # Steps to Build Personal Resume Website Using Docker and AWS/Azure
 
+## Information
+- This project was simply a POC to better learn configurations in Docker.
+- To better configure this project since it's a static website, I will be reconfiguring this project to save costs. 
+  - S3 + CloudFront + Route53 + CodePipeline
 ## Prerequisite  
 - Install WSL
 - Docker
